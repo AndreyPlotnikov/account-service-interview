@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
-    "db:init": "export $(grep -v '^#' .env | xargs) && PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f init.sql"
+    "db:init": "ts-node scripts/init-db.ts"
   },
   "keywords": [],
   "author": "",
