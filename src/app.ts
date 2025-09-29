@@ -13,6 +13,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.status(200).json({message: 'Здраститя'});
+});
+
 // Account routes
 app.post('/accounts', createAccount);
 app.get('/accounts/:id', getAccountById);
